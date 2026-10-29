@@ -1,0 +1,264 @@
+@import url(https://fonts.google.com/specimen/Inconsolata);
+
+:root{
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-300: hsl(252, 6%, 83%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(248, 70%, 10%);
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%); 
+    --gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+@media screen and (min-width: 1200px){
+    body{
+        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-desktop.svg),
+        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
+        background-position: top center, center center, bottom left, top right, center center;
+        background-size: auto,auto, auto, auto, cover;
+        height: 97.8vh;
+    }
+    
+}
+@media  screen and (min-width: 378px) and ( max-width: 1199px ) {
+    body{
+        background-image:  url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg),  url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg), 
+        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-tablet.png);
+        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
+        background-position: top center, center right, bottom left, top right, center center;
+        background-size: auto, auto, 30rem, 20rem, cover;
+        height: 97.8vh;
+    }
+}
+@media screen and (max-width: 375px) {
+    body{
+        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
+        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
+        background-position: top center, center right, bottom left, top right, center center;
+        background-size: auto, auto, 30rem, 20rem, cover;
+        height: 97.8vh;
+    }
+}
+
+body{
+    font-family: "Inconsolata", monospace;
+    color: var(--neutral-0);
+    align-items: center;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;    
+    margin-bottom: 15px;
+}
+h1{
+    margin: 0px;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.text-label{
+    font-size: 14px;
+    padding-left: 8px;
+    margin-top: 10px;
+}
+
+#index-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    h1{
+        font-size: 60px;
+        font-weight: 700;
+        vertical-align: middle;
+        margin: 0px;
+    }
+}
+.register-button{
+    text-decoration: none;
+    color: black;
+    background-color: var(--orange-700);
+    padding: 18px 10rem;
+    border-radius: 12px;
+
+}
+/*----register----*/
+#register-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+}
+.wrapper{
+    display: flex;
+    border: 2px solid rgba(245, 222, 179, 0);
+    border-radius: 16px;
+    padding: 2px;
+    align-items: center;
+}
+.wrapper:hover{
+    border-color: var(--neutral-300);
+}
+
+.upload-box{
+    height: 7em;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed var(--neutral-500);
+    border-radius: 12px;
+    background-color:#8888881d;
+    backdrop-filter: blur(3px);
+    cursor: pointer;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img{
+        size: 10px;
+        vertical-align: middle;
+        background-color:#a0a0a01d;
+        backdrop-filter: blur(3px);
+        padding: 6px 6px;
+        border: 1.5px solid var(--neutral-700);
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+
+    #upload-buttons{
+        display: none;
+    }
+
+    button{
+        color: var(--neutral-0);
+        font-size: 10px;
+        padding: 5px;
+        border: none;
+        border-radius: 3px;
+        background-color:#a0a0a01d;
+        backdrop-filter: blur(3px);
+        cursor: pointer;
+    }
+    
+    span{
+        font-size: 13px;
+    }
+}
+#invalid-email{
+    visibility: hidden;
+}
+.instruction{
+    text-align: left;
+    align-items: center;
+    margin: 0px;
+    font-size: 10px;
+
+    img{
+        position: relative;
+        bottom: 1px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}
+
+.text-field{
+    height: 2.5rem;
+    width: 100%;
+    border: 1.5px solid var(--neutral-500);
+    border-radius: 12px;  
+    padding-left: 10px;   
+    color: var(--neutral-0);
+    background-color:#8888881d;
+    backdrop-filter: blur(3px);
+}
+.text-field::hover{
+    border-style: double;
+}
+.text-field::placeholder{
+    color: #888888; 
+}
+
+#submit-button{
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--orange-700);
+    cursor: pointer;
+}
+
+/*----ticket----*/
+#ticket-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    h1{
+        max-width: 40rem;
+    }
+}
+
+#ticket{
+    background-image: url(/assets/pattern-ticket.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    backdrop-filter: blur(10px);
+    width: 70vh;
+    height: 30vh;
+    overflow: hidden;
+
+
+    small{
+        display: flex;
+        flex-direction: column;
+        margin-left: 3rem;
+    }
+    
+    #card-content{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        position: relative;
+        top: 25px;
+        left: 40px;
+    }
+    #user-detail{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+    #user-detail div p img{
+        vertical-align: middle;
+
+    }
+
+    #avatar{
+        width: 4rem;
+        height: 4rem;
+        overflow: clip;
+        border-radius: 9px;
+    }
+}

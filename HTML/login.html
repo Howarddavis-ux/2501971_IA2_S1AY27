@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Conf</title>
+    <link rel = "stylesheet" href="/css/style.css">
+    <script src="/js/validation.js" defer></script>
+    <script src="/js/ticket.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src = "/assets/logo-full.svg">
+    </header>
+    <div id = "register-main">
+        <div style="display: block;">
+            <h1>Your Journey to Coding Conf <br> 2025 Starts Here!</h1>
+            <p>Secure your spot at next year's biggest coding conference.</p>
+        </div>
+
+        <form action = "" method = "">
+            
+            <label for = "upload-container" class = "text-label">Upload Avatar</label>
+            <div class = "upload-container">
+                <div class = "wrapper">
+                    <label for="file-upload" class = "upload-box">
+                        <div>
+                            <img id = "preview" src = "/assets/icon-upload.svg">
+                            <span id = "upload-buttons">
+                                <button type ="reset" id = "upload-options">Remove image</button>
+                                <button type ="button" id = "upload-options">Change image</button>
+                            </span>
+                        </div>
+                        <span id = "test">Drag and drop or click to upload</span>
+                    </label>
+                </div>
+                <input type="file" id="file-upload" name="uploaded_file" onchange="acceptFile(this)" hidden>
+                <p id = "upload-instruction" class = "text-label instruction"><img src ="/assets/icon-info.svg">Upload your photo (JPG or PNG, max size: 500KB).</p>
+            </div>
+
+            <label for = "full-name" class = "text-label">Full Name</label>
+            <div class="wrapper">
+                <input type = "text"  class = "full-name text-field" name = "full_name">
+            </div>
+
+            <label for = "email-address" class = "text-label">Email Address</label>
+            <div class = "wrapper">
+                <input type = "text" class = "email-address text-field" name = "email_address" placeholder="example@email.com">
+            </div>
+            <p id = "invalid-email" class = "text-label instruction"><img src ="/assets/icon-info.svg">Please enter a valid email address</p>
+
+            <label for = "github-username" class = "text-label">GitHub Username</label>
+            <div class = "wrapper">
+                <input type="text" class = "github-username text-field"  name = "github_username" placeholder="@yourusername">
+            </div>
+            
+            <div class = "wrapper" style = "margin-top: 10px;">
+                <button type="submit" id = "submit-button"><strong>Generate My Ticket</strong></button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
