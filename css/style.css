@@ -79,11 +79,12 @@ p{
     justify-content: center;
     gap: 3rem;
 }
-#index-main h1{
-    font-size: 80px;
-    font-weight: 700;
-    vertical-align: middle;
-    margin: 0px;
+#index-main{
+    position: relative;
+    height: 100%;
+    justify-content: center;
+    gap: 3rem;
+    bottom: 50px;
 }
 #index-main p{
     font-size: 20px;
@@ -337,7 +338,7 @@ p{
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto,auto, auto, auto, cover;
-        height: 100vh;
+        height: 97.8vh;
     }
     #ticket #card-content{
         gap: 2rem;
@@ -351,7 +352,7 @@ p{
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
-        height: 100vh;
+        height: 97.8vh;
     }
     #register-main h1{
         padding: 0px;   
@@ -455,7 +456,7 @@ p{
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat, repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
-        height: 100vh;
+        height: 97.8vh;
     }
     header img:not(.nav-buttons){
         position:unset;
