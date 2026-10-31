@@ -5,7 +5,7 @@ let par = {
     gitUserName: "",
 
     validEmail: function() {
-        let infoIcon = '<img src="/assets/icon-info.svg" alt="info">';
+        let infoIcon = '<img src="assets/icon-info.svg" alt="info">';
         let emailWarning = document.getElementById('invalid-email');
         let re = /\S+@\S+\.\S+/;;
 
@@ -22,7 +22,7 @@ let par = {
     }, 
 
     validUsername: function() {
-        let infoIcon = '<img src="/assets/icon-info.svg" alt="info">';
+        let infoIcon = '<img src="assets/icon-info.svg" alt="info">';
         let gitWarning = document.getElementById('invalid-github');
 
         if (!this.gitUserName.startsWith('@')) {
@@ -49,7 +49,7 @@ function acceptFile(input){
     let submitButton = document.getElementById('submit-button');
 
     if (imgsize > 500) {
-        let infoIcon = '<img src="/assets/icon-info.svg" alt="">';
+        let infoIcon = '<img src="assets/icon-info.svg" alt="">';
         if (warning) {
             input.value = "";
             par.avatarURL = "";
@@ -97,7 +97,7 @@ function removeImage(event) {
 
     if (file) file.value = "";
     if (preview) {
-        preview.src = "/assets/icon-upload.svg";
+        preview.src = "assets/icon-upload.svg";
         preview.style.padding = '';
         preview.style.maxBlockSize = '';
         preview.style.inlineSize = '';
@@ -107,7 +107,7 @@ function removeImage(event) {
     if (uploadText) uploadText.style.display = "";
     if (warning) {
         warning.style.color = '';
-        warning.innerHTML = '<img src="/assets/icon-info.svg">Upload your photo (JPG or PNG, max size: 500KB).';
+        warning.innerHTML = '<img src="assets/icon-info.svg">Upload your photo (JPG or PNG, max size: 500KB).';
     }
 }
 

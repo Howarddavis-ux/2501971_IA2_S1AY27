@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Conf</title>
-    <link rel = "stylesheet" href="/css/style.css">
-    <script src="/js/validation.js" defer></script>
+    <link rel = "stylesheet" href="css/style.css">
+    <script src="js/validation.js" defer></script>
 </head>
 <body>
     <header>
-        <img src = "/assets/logo-full.svg">
+        <img src = "assets/logo-full.svg">
         <nav>
             <a class = "nav-buttons" href="index.html" ><strong>Home</strong></a>
             <a id = "ticket-nav" class = "nav-buttons" href="login.html"><strong>Login</strong></a>
@@ -28,7 +28,7 @@
                 <div class = "wrapper">
                     <label for="file-upload" class = "upload-box">
                         <div>
-                            <img id = "preview" src = "/assets/icon-upload.svg">
+                            <img id = "preview" src = "assets/icon-upload.svg">
                         </div>
                         <span id = "test">Drag and drop or click to upload</span>
                         <span id = "upload-buttons">
@@ -38,7 +38,7 @@
                     </label>
                 </div>
                 <input type="file" id="file-upload" name="uploaded_file" onchange="acceptFile(this)" hidden>
-                <p id = "upload-instruction" class = "text-label instruction"><img src ="/assets/icon-info.svg">Upload your photo (JPG or PNG, max size: 500KB).</p>
+                <p id = "upload-instruction" class = "text-label instruction"><img src ="assets/icon-info.svg">Upload your photo (JPG or PNG, max size: 500KB).</p>
             </div>
 
             <label for = "full-name" class = "text-label">Full Name</label>
@@ -50,13 +50,13 @@
             <div class = "wrapper">
                 <input type = "text" class = "email-address text-field" name = "email_address" placeholder="example@email.com">
             </div>
-            <p id = "invalid-email" class = "text-label instruction"><img src ="/assets/icon-info.svg">Please enter a valid email address</p>
+            <p id = "invalid-email" class = "text-label instruction"><img src ="assets/icon-info.svg">Please enter a valid email address</p>
 
             <label for="github-username" class="text-label">GitHub Username</label>
             <div class="wrapper">
                 <input type="text" id="github-username" class="github-username text-field" name="github_username" placeholder="@yourusername">
             </div>
-            <p id="invalid-github" class="text-label instruction"><img src="/assets/icon-info.svg" alt="info">GitHub username must start with @</p>
+            <p id="invalid-github" class="text-label instruction"><img src="assets/icon-info.svg" alt="info">GitHub username must start with @</p>
             
             <div class = "wrapper" style = "margin-top: 10px;">
                 <button type="submit" id = "submit-button"><strong>Generate My Ticket</strong></button>

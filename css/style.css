@@ -13,10 +13,12 @@
 
 body{
     display: grid;
-    grid-template-rows: .5fr 5fr;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
     align-items: start;
     font-family: "Inconsolata", monospace;
     color: var(--neutral-0);
+    min-height: 100vh;
 }
 header{
     position: relative;
@@ -25,7 +27,10 @@ header{
     justify-content: flex-end;
     align-items: center; 
     width: 100%; 
-    padding: 10px 0px 0px 0px;   
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 10px 0px 0px 0px;
+    grid-column: 1;
 }
 header img:not(.nav-buttons){
     position: absolute;
@@ -38,6 +43,8 @@ header nav:has(.nav-buttons){
     align-items: center;
     gap: 8px;
     margin-left: auto;
+    position: relative;
+    z-index: 1;
 }
 .nav-buttons{
     display: inline-flex;
@@ -65,10 +72,10 @@ p{
 
 #index-main{
     position: relative;
-    bottom: 20%;
     height: 100%;
     justify-content: center;
     gap: 3rem;
+    bottom: 50px;
 }
 #index-main h1{
     font-size: 80px;
@@ -164,13 +171,16 @@ p{
 }
 
 .register-button{
+    display: flex;
     text-decoration: none;
     color: black;
     background-color: var(--orange-700);
     padding: 18px 10rem;
     border-radius: 12px;
+    max-lines: 1;
 
 }
+
 :is(#invalid-email, #invalid-github){
     display: none;
 }
@@ -241,7 +251,7 @@ p{
 #ticket{
     display: grid;
     grid-template-columns: 4fr 1fr;
-    background-image: url('/assets/pattern-ticket.svg');
+    background-image: url('../assets/pattern-ticket.svg');
     background-repeat: no-repeat;
     background-size: contain;
     backdrop-filter: blur(10px);
@@ -319,8 +329,8 @@ p{
 }
 @media screen{
     body{
-        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-desktop.svg),
-        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-image: url(../assets/pattern-lines.svg), url(../assets/pattern-circle.svg), url(../assets/pattern-squiggly-line-bottom-desktop.svg),
+        url(../assets/pattern-squiggly-line-top.svg), url(../assets/background-desktop.png);
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto,auto, auto, auto, cover;
@@ -333,8 +343,8 @@ p{
 }
 @media screen and (max-width: 1199px) {
     body{
-        background-image:  url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg),  url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg), 
-        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-tablet.png);
+        background-image:  url(../assets/pattern-lines.svg), url(../assets/pattern-circle.svg),  url(../assets/pattern-squiggly-line-bottom-mobile-tablet.svg), 
+        url(../assets/pattern-squiggly-line-top.svg), url(../assets/background-tablet.png);
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
@@ -348,12 +358,26 @@ p{
 }
 @media screen and (max-width: 550px) {
     body{
-        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
-        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-image: url(../assets/pattern-lines.svg), url(../assets/pattern-circle.svg), url(../assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
+        url(../assets/pattern-squiggly-line-top.svg), url(../assets/background-desktop.png);
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat, repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
         height: 97.5vh;
+    }
+    #index-main h1{
+        font-size: 50px;
+        font-weight: 700;
+        vertical-align: middle;
+        margin: 0px;
+    }
+    .register-button{
+        width: 90vw;
+        max-width: 36rem;
+        box-sizing: border-box;
+        justify-content: center;
+        padding-inline: 1rem;
+        text-align: center;
     }
     header img:not(.nav-buttons){
         position:unset;
@@ -422,8 +446,8 @@ p{
 }
 @media screen and (max-width: 330px) {
     body{
-        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
-        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-image: url(../assets/pattern-lines.svg), url(../assets/pattern-circle.svg), url(../assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
+        url(../assets/pattern-squiggly-line-top.svg), url(../assets/background-desktop.png);
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat, repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
