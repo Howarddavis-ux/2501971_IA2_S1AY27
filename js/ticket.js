@@ -10,7 +10,7 @@ try {
     sessionStorage.removeItem('par');
 }
 if (!storedPar) {
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
 
 let nameElement = document.getElementById('name');
