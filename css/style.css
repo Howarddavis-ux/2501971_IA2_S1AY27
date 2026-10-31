@@ -18,7 +18,9 @@ body{
     align-items: start;
     font-family: "Inconsolata", monospace;
     color: var(--neutral-0);
-    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
 }
 header{
     position: relative;
@@ -58,9 +60,10 @@ header nav:has(.nav-buttons){
     cursor: pointer;
 }
 h1{
-    margin: 0px;
+    margin: 40px 0px 0px 0px;
     text-align: center;
 }
+
 p{
     text-align: center;
 }
@@ -75,7 +78,6 @@ p{
     height: 100%;
     justify-content: center;
     gap: 3rem;
-    bottom: 50px;
 }
 #index-main h1{
     font-size: 80px;
@@ -335,7 +337,7 @@ p{
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto,auto, auto, auto, cover;
-        height: 97.8vh;
+        height: 100vh;
     }
     #ticket #card-content{
         gap: 2rem;
@@ -349,7 +351,7 @@ p{
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
-        height: 97.8vh;
+        height: 100vh;
     }
     #register-main h1{
         padding: 0px;   
@@ -364,7 +366,7 @@ p{
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat, repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
-        height: 97.5vh;
+        height: 100vh;
     }
     #index-main h1{
         font-size: 50px;
@@ -398,11 +400,11 @@ p{
     #register-main h1{
         margin-top: 40px;
         padding: 0px;   
-        font-size: 34px;
+        font-size: 40px;
     }
 
     .upload-box{
-        height: 5em;
+        height: 7em;
     }
 
     #ticket-main{
@@ -410,7 +412,7 @@ p{
     }
     #ticket-main h1{
         max-width: 19rem;
-        font-size: 22px;
+        font-size: 30px;
         line-height: 1.15;
     }
     #ticket-main p{
@@ -453,7 +455,7 @@ p{
         background-repeat: no-repeat,no-repeat, no-repeat, no-repeat, repeat;
         background-position: top center, center right, bottom left, top right, center center;
         background-size: auto, auto, 30rem, 20rem, cover;
-        height: 97.5vh;
+        height: 100vh;
     }
     header img:not(.nav-buttons){
         position:unset;
@@ -471,7 +473,7 @@ p{
         font-size: 24px;
     }
     .upload-box{
-        height: 5em;
+        height: 7em;
     }
     .instruction{
         font-size: 8px;
@@ -482,7 +484,7 @@ p{
     }
     #ticket-main h1{
         max-width: 18rem;
-        font-size: 20px;
+        font-size: 30px;
         line-height: 1.15;
     }
     #ticket-main p{
