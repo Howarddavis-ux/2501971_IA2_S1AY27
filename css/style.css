@@ -11,50 +11,44 @@
     --gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
 }
 
-@media screen and (min-width: 1200px){
-    body{
-        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-desktop.svg),
-        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
-        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
-        background-position: top center, center center, bottom left, top right, center center;
-        background-size: auto,auto, auto, auto, cover;
-        height: 97.8vh;
-    }
-    
-}
-@media  screen and (min-width: 378px) and ( max-width: 1199px ) {
-    body{
-        background-image:  url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg),  url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg), 
-        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-tablet.png);
-        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
-        background-position: top center, center right, bottom left, top right, center center;
-        background-size: auto, auto, 30rem, 20rem, cover;
-        height: 97.8vh;
-    }
-}
-@media screen and (max-width: 375px) {
-    body{
-        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
-        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
-        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
-        background-position: top center, center right, bottom left, top right, center center;
-        background-size: auto, auto, 30rem, 20rem, cover;
-        height: 97.8vh;
-    }
-}
-
 body{
+    display: grid;
+    grid-template-rows: .5fr 5fr;
+    align-items: start;
     font-family: "Inconsolata", monospace;
     color: var(--neutral-0);
-    align-items: center;
 }
 header{
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center; 
-    width: 100%;    
-    margin-bottom: 15px;
+    width: 100%; 
+    padding: 10px 0px 0px 0px;   
+}
+header img:not(.nav-buttons){
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    vertical-align: middle;
+}
+header nav:has(.nav-buttons){
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+.nav-buttons{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 10px 20px;
+    background-color: var(--orange-500);
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
 }
 h1{
     margin: 0px;
@@ -70,44 +64,46 @@ p{
 }
 
 #index-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    bottom: 20%;
+    height: 100%;
     justify-content: center;
-    gap: 5rem;
-
-    h1{
-        font-size: 60px;
-        font-weight: 700;
-        vertical-align: middle;
-        margin: 0px;
-    }
+    gap: 3rem;
 }
-.register-button{
-    text-decoration: none;
-    color: black;
-    background-color: var(--orange-700);
-    padding: 18px 10rem;
-    border-radius: 12px;
-
+#index-main h1{
+    font-size: 80px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin: 0px;
 }
+#index-main p{
+    font-size: 20px;
+}
+
 /*----register----*/
 #register-main{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+}
+#register-main h1{
+    padding: 0px 28rem;
+    font-size: 40px;
 }
 
-form{
+#register-main p{
+    color: var(--neutral-300);
+}
+
+#register-main form{
     display: flex;
     flex-direction: column;
     width: 25rem;
 }
+
+
 .wrapper{
     display: flex;
     border: 2px solid rgba(245, 222, 179, 0);
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 2px;
     align-items: center;
 }
@@ -116,7 +112,7 @@ form{
 }
 
 .upload-box{
-    height: 7em;
+    height: 6em;
     width: 100%;
     margin: 0px;
     display: flex;
@@ -124,69 +120,80 @@ form{
     justify-content: center;
     align-items: center;
     border: 2px dashed var(--neutral-500);
-    border-radius: 12px;
+    border-radius: 10px;
     background-color:#8888881d;
     backdrop-filter: blur(3px);
     cursor: pointer;
 
-    div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    img{
-        size: 10px;
-        vertical-align: middle;
-        background-color:#a0a0a01d;
-        backdrop-filter: blur(3px);
-        padding: 6px 6px;
-        border: 1.5px solid var(--neutral-700);
-        border-radius: 10px;
-        margin-bottom: 5px;
-    }
-
-    #upload-buttons{
-        display: none;
-    }
-
-    button{
-        color: var(--neutral-0);
-        font-size: 10px;
-        padding: 5px;
-        border: none;
-        border-radius: 3px;
-        background-color:#a0a0a01d;
-        backdrop-filter: blur(3px);
-        cursor: pointer;
-    }
     
-    span{
-        font-size: 13px;
-    }
 }
-#invalid-email{
-    visibility: hidden;
+.upload-box div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.upload-box img{
+    size: 10px;
+    vertical-align: middle;
+    background-color:#a0a0a01d;
+    backdrop-filter: blur(3px);
+    padding: 6px 6px;
+    border: 1.8px solid var(--neutral-700);
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#upload-buttons{
+    display: none;
+}
+
+.upload-box button{
+    color: var(--neutral-0);
+    font-size: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color:#a0a0a01d;
+    backdrop-filter: blur(3px);
+    cursor: pointer;
+}
+
+.upload-box span{
+    font-size: 13px;
+}
+
+.register-button{
+    text-decoration: none;
+    color: black;
+    background-color: var(--orange-700);
+    padding: 18px 10rem;
+    border-radius: 12px;
+
+}
+:is(#invalid-email, #invalid-github){
+    display: none;
+}
+
 .instruction{
     text-align: left;
     align-items: center;
     margin: 0px;
     font-size: 10px;
+}
 
-    img{
-        position: relative;
-        bottom: 1px;
-        vertical-align: middle;
-        margin-right: 5px;
-    }
+.instruction  img{
+    position: relative;
+    bottom: 1px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 .text-field{
-    height: 2.5rem;
+    height: 2rem;
     width: 100%;
     border: 1.5px solid var(--neutral-500);
-    border-radius: 12px;  
+    border-radius: 8px;  
     padding-left: 10px;   
     color: var(--neutral-0);
     background-color:#8888881d;
@@ -203,62 +210,286 @@ form{
     height: 45px;
     width: 100%;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: var(--orange-700);
     cursor: pointer;
 }
 
 /*----ticket----*/
-#ticket-main{
+:where(#ticket-main, #register-main, #index-main){
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#ticket-main{
     gap: 20px;
     h1{
         max-width: 40rem;
     }
 }
 
+.gradient{
+    background-image: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    background-clip: text;
+    color: transparent;
+}
+
+#ticket-email{
+        color: var(--orange-500);
+}
 #ticket{
-    background-image: url(/assets/pattern-ticket.svg);
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    background-image: url('/assets/pattern-ticket.svg');
     background-repeat: no-repeat;
-    background-position: center center;
     background-size: contain;
     backdrop-filter: blur(10px);
-    width: 70vh;
-    height: 30vh;
+    width: 35rem;
+    height: 16rem;
     overflow: hidden;
+    position: relative;
+}
 
+#ticket :is(p, small){
+    text-align: left;
+}
 
-    small{
+#ticket small{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    color: var(--neutral-300);
+
+}
+
+#ticket :is(#card-content, #user-detail){
+    display: flex;
+}
+
+#ticket #card-content{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 85%;
+    justify-content: space-between;
+    padding: 28px 24px 34px 28px;
+}
+#ticket #user-detail{
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+#ticket #name{
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+#ticket #user-detail div span{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--neutral-300);
+    font-size: 13px;
+}
+#ticket #github-username{
+    display: inline;
+}
+
+#ticket #avatar{
+    width: 4rem;
+    height: 4rem;
+    overflow: clip;
+    border-radius: 9px;
+}
+#ticket-number{
+    grid-column: 2;
+    align-self: center;
+    justify-content: center;
+    color: var(--neutral-300);
+    font-size: 22px;
+    letter-spacing: 2px;
+    transform: rotate(90deg);
+    text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+    #ticket{
+        width: 21.5rem;
+        height: 10rem;
+    }
+}
+@media screen{
+    body{
+        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-desktop.svg),
+        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
+        background-position: top center, center right, bottom left, top right, center center;
+        background-size: auto,auto, auto, auto, cover;
+        height: 97.8vh;
+    }
+    #ticket #card-content{
+        gap: 2rem;
+    }
+
+}
+@media screen and (max-width: 1199px) {
+    body{
+        background-image:  url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg),  url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg), 
+        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-tablet.png);
+        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat;
+        background-position: top center, center right, bottom left, top right, center center;
+        background-size: auto, auto, 30rem, 20rem, cover;
+        height: 97.8vh;
+    }
+    #register-main h1{
+        padding: 0px;   
+        font-size: 40px;
+    }
+
+}
+@media screen and (max-width: 550px) {
+    body{
+        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
+        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat, repeat;
+        background-position: top center, center right, bottom left, top right, center center;
+        background-size: auto, auto, 30rem, 20rem, cover;
+        height: 97.5vh;
+    }
+    header img:not(.nav-buttons){
+        position:unset;
+        transform: translateX(0%);
+        width: 10rem;
+    }
+    .nav-buttons{
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+    #register-main form{
         display: flex;
         flex-direction: column;
-        margin-left: 3rem;
+        width: 20rem;
     }
-    
-    #card-content{
+
+    #register-main h1{
+        padding: 0px;   
+        font-size: 28px;
+    }
+
+    .upload-box{
+        height: 5em;
+    }
+
+    #ticket-main{
+        gap: 15px;
+    }
+    #ticket-main h1{
+        max-width: 19rem;
+        font-size: 22px;
+        line-height: 1.15;
+    }
+    #ticket-main p{
+        max-width: 20rem;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    #ticket #card-content{
         display: flex;
         flex-direction: column;
-        gap: 3rem;
-        position: relative;
-        top: 25px;
-        left: 40px;
-    }
-    #user-detail{
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        align-items: center;
-    }
-    #user-detail div p img{
-        vertical-align: middle;
-
-    }
-
-    #avatar{
-        width: 4rem;
-        height: 4rem;
+        justify-content: space-between;
         overflow: clip;
-        border-radius: 9px;
+        height: 85%;
+        gap: 2rem;
+        padding: 10px 8px 10px 14px;
     }
+    #ticket #company-detail img{
+        height: 20px;
+    }
+    #ticket small{
+        margin-left: 1.8rem;
+        font-size: 9px;
+    }
+    #ticket #avatar{
+        width: 40px;
+        height: 40px;
+    }
+    :is(#ticket #name, #ticket #ticket-number){
+        font-size: 12px;
+    }
+    #ticket #user-detail div span{
+        font-size: 9px;
+    }
+
+}
+@media screen and (max-width: 330px) {
+    body{
+        background-image: url(/assets/pattern-lines.svg), url(/assets/pattern-circle.svg), url(/assets/pattern-squiggly-line-bottom-mobile-tablet.svg),
+        url(/assets/pattern-squiggly-line-top.svg), url(/assets/background-desktop.png);
+        background-repeat: no-repeat,no-repeat, no-repeat, no-repeat, repeat;
+        background-position: top center, center right, bottom left, top right, center center;
+        background-size: auto, auto, 30rem, 20rem, cover;
+        height: 97.5vh;
+    }
+    header img:not(.nav-buttons){
+        position:unset;
+        transform: translateX(0%);
+    }
+    #register-main form{
+        display: flex;
+        flex-direction: column;
+        width: 18.5rem;
+    }
+
+    #register-main h1{
+        padding: 0px;   
+        font-size: 24px;
+    }
+    .upload-box{
+        height: 5em;
+    }
+
+    #ticket-main{
+        gap: 15px;
+    }
+    #ticket-main h1{
+        max-width: 18rem;
+        font-size: 20px;
+        line-height: 1.15;
+    }
+    #ticket-main p{
+        max-width: 18.5rem;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    #ticket{
+        width: 19rem;
+        height: 8.8rem;
+        grid-template-columns: 4fr 1fr;
+    }
+    #ticket #card-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: clip;
+        height: 85%;
+        gap: 0;
+        padding: 8px 6px 8px 10px;
+    }
+    #ticket #company-detail img{
+        height: 18px;
+    }
+    #ticket small{
+        margin-left: 1.5rem;
+        font-size: 8px;
+    }
+    #ticket #avatar{
+        width: 34px;
+        height: 34px;
+    }
+    :is(#ticket #name, #ticket #ticket-number){
+        font-size: 11px;
+    }
+    #ticket #user-detail div span{
+        font-size: 8px;
+    }
+
 }

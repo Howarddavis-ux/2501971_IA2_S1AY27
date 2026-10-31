@@ -6,15 +6,18 @@
     <title>Coding Conf</title>
     <link rel = "stylesheet" href="/css/style.css">
     <script src="/js/validation.js" defer></script>
-    <script src="/js/ticket.js" defer></script>
 </head>
 <body>
     <header>
         <img src = "/assets/logo-full.svg">
+        <nav>
+            <a class = "nav-buttons" href="index.html" ><strong>Home</strong></a>
+            <a id = "ticket-nav" class = "nav-buttons" href="login.html"><strong>Login</strong></a>
+        </nav>
     </header>
-    <div id = "register-main">
+    <main id = "register-main">
         <div style="display: block;">
-            <h1>Your Journey to Coding Conf <br> 2025 Starts Here!</h1>
+            <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
             <p>Secure your spot at next year's biggest coding conference.</p>
         </div>
 
@@ -26,12 +29,12 @@
                     <label for="file-upload" class = "upload-box">
                         <div>
                             <img id = "preview" src = "/assets/icon-upload.svg">
-                            <span id = "upload-buttons">
-                                <button type ="reset" id = "upload-options">Remove image</button>
-                                <button type ="button" id = "upload-options">Change image</button>
-                            </span>
                         </div>
                         <span id = "test">Drag and drop or click to upload</span>
+                        <span id = "upload-buttons">
+                            <button type="button" id="upload-options" onclick="removeImage(event)">Remove image</button>
+                            <button type="button" id="upload-options" onclick="changeImage(event)">Change image</button>
+                        </span>
                     </label>
                 </div>
                 <input type="file" id="file-upload" name="uploaded_file" onchange="acceptFile(this)" hidden>
@@ -49,15 +52,16 @@
             </div>
             <p id = "invalid-email" class = "text-label instruction"><img src ="/assets/icon-info.svg">Please enter a valid email address</p>
 
-            <label for = "github-username" class = "text-label">GitHub Username</label>
-            <div class = "wrapper">
-                <input type="text" class = "github-username text-field"  name = "github_username" placeholder="@yourusername">
+            <label for="github-username" class="text-label">GitHub Username</label>
+            <div class="wrapper">
+                <input type="text" id="github-username" class="github-username text-field" name="github_username" placeholder="@yourusername">
             </div>
+            <p id="invalid-github" class="text-label instruction"><img src="/assets/icon-info.svg" alt="info">GitHub username must start with @</p>
             
             <div class = "wrapper" style = "margin-top: 10px;">
                 <button type="submit" id = "submit-button"><strong>Generate My Ticket</strong></button>
             </div>
         </form>
-    </div>
+    </main>
 </body>
 </html>
