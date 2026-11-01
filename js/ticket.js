@@ -72,6 +72,7 @@ let lineNameElement = document.getElementById('line-name');
 let avatarElement = document.getElementById('avatar');
 let gitUserNameElement = document.getElementById('github-username');
 let emailElement = document.getElementById('ticket-email');
+let numberElement = document.getElementById('ticket-number');
 
 if (storedPar) {
     if (nameElement) {
@@ -92,5 +93,9 @@ if (storedPar) {
 
     if (emailElement) {
         emailElement.innerHTML = storedPar.email;
+    }
+
+    if(numberElement){
+        numberElement.innerHTML = '#' + storedPar.ticketNumber;
     }
 }

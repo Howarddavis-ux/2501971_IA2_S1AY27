@@ -76,6 +76,7 @@ let par = {
     fullName: "",
     email: "",
     gitUserName: "",
+    ticketNumber: "",
 
     validEmail: function() {
         let infoIcon = '<img src="../assets/icon-info.svg" alt="info">';
@@ -202,9 +203,10 @@ function submit(event) {
     par.fullName = document.querySelector('.full-name').value.trim();
     par.email = document.querySelector('.email-address').value.trim();
     par.gitUserName = document.querySelector('.github-username').value.trim();
+    par.ticketNumber = Math.floor(Math.random() * (99999 - 10000) + 10000);
 
     let validCheck = par.validEmail() || par.validUsername();
-    let emptyCheck = par.avatarURL === "" || par.fullName === "" || par.email === "" || par.gitUserName === "";
+    let emptyCheck = par.avatarURL === "" || par.fullName === "" || par.email === "" || par.gitUserName === "" || par.ticketNumber === "";
 
     if (emptyCheck || !validCheck) {
         return;
