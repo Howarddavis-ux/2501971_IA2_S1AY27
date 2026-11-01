@@ -81,7 +81,7 @@ let par = {
         let infoIcon = '<img src="../assets/icon-info.svg" alt="info">';
         let emailWarning = document.getElementById('invalid-email');
         let re = /\S+@\S+\.\S+/; // Source - https://stackoverflow.com/a/9204568
-                                // Posted by C. Lee, modified by community. See post 'Timeline' for change history
+                                // Posted by C. Lee, modified by community.
                                 // Retrieved 2026-10-31, License - CC BY-SA 4.0
 
         if (!re.test(this.email)) {
@@ -113,7 +113,10 @@ let par = {
 };
 
 function acceptFile(input){
-    if (!input.files || input.files.length === 0) {
+// Source - https://stackoverflow.com/a/57525447
+// Posted by Thomas Clague, modified by community.
+// Retrieved 2026-10-31, License - CC BY-SA 4.0
+    if (!input.files || input.files.length === 0 || !['image/jpeg', 'image/png'].includes(input.files[0].type)) {
         return; 
     }
     
